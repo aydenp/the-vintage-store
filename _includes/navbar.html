@@ -1,0 +1,14 @@
+<nav class="navbar container">
+    {%- if page.home -%}
+    <ul class="links">
+        <li><a href="#collection">The Collection</a></li>
+        <li><a href="#story">The Story</a></li>
+    </ul>
+    {%- else -%}
+    <a class="brand" href=".">{{ site.title }}</a>
+    <ul class="links">
+        <li><a href="./#collection">The Collection</a></li>
+        <li><a href="./#story">The Story</a></li>
+    </ul>
+    {%- endif -%}
+</nav>

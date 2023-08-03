@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="{{ "/" | absolute_url }}">
+
+    {% include meta.html %}
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    {%- if page.hero-image -%}
+    <div class="hero-image-ctn">
+        {% include navbar.html %}
+        <div class="cover" style="background-image: url('{{ page.hero-image }}')"></div>
+    </div>
+    {%- else -%}
+    {% include navbar.html %}
+    {%- endif -%}
+
+    {{ content }}
+
+    <footer class="container">
+        <div>&copy; {{ site.title }} 2023</div>
+        <div>Call <a href="tel:+18008468243">1-800-VINTAGE</a> &middot; <a href="mailto:support@thevintagestore.com">support@thevintagestore.com</a></div>
+    </footer>
+</body>
+</html>

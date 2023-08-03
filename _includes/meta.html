@@ -1,0 +1,35 @@
+<!-- Page Metadata -->
+<!-- Adapted from ayden.dev -->
+
+{%- if page.title -%}
+<title>{{ page.title }} — {{ site.title }}</title>
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:site_name" content="{{ site.title }}">
+{%- else -%}
+<title>{{ site.title }}</title>
+<meta property="og:title" content="{{ site.title }}">
+{%- endif -%}
+
+<meta name="author" content="{{ site.author }}">
+<meta name="twitter:creator" content="@{{ site.author_twitter }}">
+<meta name="twitter:site" content="@{{ site.author_twitter }}">
+
+{%- if page.description -%}
+<meta property="og:description" content="{{ page.description }}">
+<meta name="description" content="{{ page.description }}"/>
+{%- elsif page.layout == "post" -%}
+<meta property="og:description" content="{{ page.excerpt | strip_html | truncatewords:100 | strip }}">
+<meta name="description" content="{{- page.excerpt | strip_html | truncatewords:100 | strip -}}"/>
+{%- else -%}
+<meta property="og:description" content="{{ site.description }}">
+<meta name="description" content="{{ site.description }}"/>
+{%- endif -%}
+
+{%- if page.hero-image -%}
+<meta property="og:image" content="{{ page.hero-image | absolute_url }}">
+<meta property="twitter:card" content="summary_large_image">
+{%- endif -%}
+
+<meta property="og:url" content="{{ page.url | absolute_url }}"/>
+
+<!-- END: Page Metadata -->
